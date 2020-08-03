@@ -8,14 +8,14 @@ import microservice.application.managingPayee.ISearchingPayeeAppService;
 import microservice.application.managingPayee.SearchingPayeeAppService;
 import microservice.domainModel.managingPayee.Payee;
 
-//@Configuration
+@Configuration
 public class ServiceConfig {
-    //@Bean
+    @Bean
     public CrudRepository<Payee, Integer> payeeRepository() {
         return new PayeeRepository();
     }
 
-    //@Bean
+    @Bean
     public ISearchingPayeeAppService searchingPayeeAppService(){
         return new SearchingPayeeAppService(payeeRepository());
     }
